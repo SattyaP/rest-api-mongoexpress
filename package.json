@@ -2,7 +2,7 @@
   "name": "learn-mern",
   "version": "1.0.0",
   "description": "build rest api with mongodb and express",
-  "main": "server.js",
+  "main": "./src/server.js",
   "type": "module",
   "scripts": {
     "server": "nodemon server.js"
@@ -27,7 +27,8 @@
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "express-async-errors": "^3.1.1",
-    "mongodb": "^6.5.0"
+    "mongodb": "^6.5.0",
+    "path": "^0.12.7"
   },
   "devDependencies": {
     "nodemon": "^3.1.0"
