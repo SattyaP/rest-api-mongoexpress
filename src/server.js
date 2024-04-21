@@ -31,17 +31,6 @@ app.use(
   }),
 );
 
-app.get("/api", (req, res) => {
-  res.setHeader('Access-Control-Allow-Credentials', true)
-  res.setHeader('Access-Control-Allow-Origin', '*')
-  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT')
-  res.setHeader(
-    'Access-Control-Allow-Headers',
-    'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
-  )
-
-  res.status(200).send("Hello World!");
-});
 app.use(`/api/${version}/products`, products);
 
 app.use((err, _req, res, next) => {
