@@ -9,7 +9,7 @@ let conn;
 try {
     console.log("\nConnecting to MongoDB...");
     conn = await client.connect();
-    console.log("Connected to MongoDB");
+    console.log("Connected to MongoDB ✅");
 } catch (e) {
     console.error(e);
 }

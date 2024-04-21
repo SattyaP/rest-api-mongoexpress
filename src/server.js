@@ -11,8 +11,12 @@ const version = process.env.VERSION || "v1";
 const app = express();
 
 const limiter = rateLimit({
-  windowMs: 1 * 60 * 1000, 
-  max: 20,
+  windowMs: 24 * 60 * 60 * 1000,
+  max: process.env.MAX_REQUESTS || 1000,
+  handler: (req, res) => {
+    res.status(429).send("Too many requests, please try again later.");
+  },
+  skip: (req) => req.ip === process.env.TRUSTED_IP || false,
 });
 
 app.use(cors());
@@ -33,6 +37,6 @@ app.use((err, _req, res, next) => {
   res.status(500).send("Uh oh! An unexpected error occured.");
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, (req) => {
   console.log(`Server is running on port: ${PORT}`);
 });
