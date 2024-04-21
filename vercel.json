@@ -6,7 +6,7 @@
         "use": "@vercel/node"
       },
       {
-        "src": "src/docs/**", 
+        "src": "src/docs/**",
         "use": "@vercel/static"
       }
     ],
@@ -16,12 +16,15 @@
         "dest": "src/server.js"
       },
       {
-        "src": "/(.*)",
-        "dest": "src/docs/index.html" 
+        "src": "/docs",
+        "dest": "src/docs/index.html"
       },
       {
-        "src": "/(.*)",
-        "dest": "src/server.js"
+        "src": "/",
+        "status": 302,
+        "headers": {
+          "Location": "/docs"
+        }
       }
     ]
   }

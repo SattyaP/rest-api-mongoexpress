@@ -1,7 +1,7 @@
 # API Service Documentation
 
 ## Base URL
-The base URL for this API service is: `later`
+The base URL for this API service is: `https://rest-api-mongoexpress.vercel.app/`
 
 ## Endpoints
 
@@ -31,6 +31,6 @@ The base URL for this API service is: `later`
 - Description: Updates a specific product based on its slug.
 
 ### Full Documentation
-For the full documentation of this API service, please refer to the [API Documentation](https://github.com/SattyaP/api-service-docs).
+For the full documentation of this API service, please refer to the [API Documentation](https://rest-api-mongoexpress.vercel.app/docs).
 
 [Sattya](https://github.com/SattyaP)
