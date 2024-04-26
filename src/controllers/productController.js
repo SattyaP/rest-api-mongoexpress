@@ -11,15 +11,22 @@ class ProductController extends baseController {
             badRequest: 400,
             notFound: 404,
             serverError: 500
-        }
+        },
+        this.pageSize = 10
     }
 
     async index(req, res) {
         try {
-            const products = await db.collection('products').find({}).limit(10).toArray();
-            if (req.statusCode === 404) return this.sendError(res, [], "Products not found", this.code.notFound);
+            const pageNumber = parseInt(req.query.page) || 1;
+            const skipValue = (pageNumber - 1) * this.pageSize;
+            
+            const products = await db.collection('products').find({}).skip(skipValue).limit(this.pageSize).toArray();
+            const totalProducts = await db.collection('products').countDocuments();
+            const totalPages = Math.ceil(totalProducts / this.pageSize);
 
-            return this.sendSuccess(res, products, "Products retrieved successfully", this.code.success);
+            if (products.length === 0) return this.sendError(res, [], "Products not found", this.code.notFound);
+
+            return this.sendSuccess(res, products, "Products retrieved successfully", this.code.success, pageNumber, totalPages, true);
         } catch (error) {
             return this.sendError(res, [], "An error occured", this.code.serverError);
         }
