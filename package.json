@@ -1,6 +1,6 @@
 {
   "name": "learn-mern",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "build rest api with mongodb and express",
   "main": "./src/server.js",
   "type": "module",

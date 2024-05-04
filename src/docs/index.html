@@ -50,27 +50,27 @@
                         <tbody>
                             <tr>
                                 <td>GET</td>
-                                <td>/api/v1/products</td>
+                                <td>/api/v1/products/</td>
                                 <td>Get all products</td>
                             </tr>
                             <tr>
                                 <td>GET</td>
-                                <td>/api/v1/products/{slug}</td>
+                                <td>/api/v1/products/show/{slug}</td>
                                 <td>Get a product by slug</td>
                             </tr>
                             <tr>
                                 <td>POST</td>
-                                <td>/api/v1/products</td>
+                                <td>/api/v1/products/</td>
                                 <td>Create a new product</td>
                             </tr>
                             <tr>
                                 <td>PUT</td>
-                                <td>/api/v1/products/{slug}</td>
+                                <td>/api/v1/products/update/{slug}</td>
                                 <td>Update a product by slug</td>
                             </tr>
                             <tr>
                                 <td>DELETE</td>
-                                <td>/api/v1/products/{slug}</td>
+                                <td>/api/v1/products/delete/{slug}</td>
                                 <td>Delete a products by slug</td>
                             </tr>
                         </tbody>
@@ -80,7 +80,7 @@
                     <h5 class="text-decoration-underline">Example using javascript to get all products</h5>
                     <pre>
                         <code>
-fetch('https://rest-api-mongoexpress.vercel.app/api/v1/products')
+fetch('https://rest-api-mongoexpress.vercel.app/api/v1/products/')
     .then(response => response.json())
     .then(data => console.log(data))
     .catch(error => console.error(error))
@@ -102,7 +102,7 @@ fetch('https://rest-api-mongoexpress.vercel.app/api/v1/products')
                     <h5 class="text-decoration-underline">Example using javascript to get a product by slug</h5>
                     <pre>
                         <code>
-fetch('https://rest-api-mongoexpress.vercel.app/api/v1/products/example-name-product')
+fetch('https://rest-api-mongoexpress.vercel.app/api/v1/products/show/example-name-product')
     .then(response => response.json())
     .then(data => console.log(data))
     .catch(error => console.error(error))
