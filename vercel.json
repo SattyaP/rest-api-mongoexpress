@@ -12,7 +12,13 @@
     ],
     "routes": [
       {
-        "src": "/api/v1/products/**",
+        "src": "/api/v1/products",
+        "methods": ["GET", "POST"],
+        "dest": "src/server.js"
+      },
+      {
+        "src": "/api/v1/products/:slug",
+        "methods": ["GET", "PUT", "DELETE"],
         "dest": "src/server.js"
       },
       {
