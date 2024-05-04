@@ -12,7 +12,7 @@
     ],
     "routes": [
       {
-        "src": "/api/v1/products",
+        "src": "/api/v1/products/**",
         "dest": "src/server.js"
       },
       {
