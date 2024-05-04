@@ -17,8 +17,18 @@
         "dest": "src/server.js"
       },
       {
-        "src": "/api/v1/products/:slug",
-        "methods": ["GET", "PUT", "DELETE"],
+        "src": "/api/v1/products/show/:slug",
+        "methods": ["GET"],
+        "dest": "src/server.js"
+      },
+      {
+        "src": "/api/v1/products/update/:slug",
+        "methods": ["PUT"],
+        "dest": "src/server.js"
+      },
+      {
+        "src": "/api/v1/products/delete/:slug",
+        "methods": ["DELETE"],
         "dest": "src/server.js"
       },
       {
