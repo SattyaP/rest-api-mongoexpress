@@ -12,18 +12,8 @@
     ],
     "routes": [
       {
-        "src": "/api/v1/products",
+        "src": "/api/v1/products/(.*)",
         "methods": ["GET", "POST"],
-        "dest": "src/server.js"
-      },
-      {
-        "src": "/api/v1/products/show/:slug",
-        "methods": ["GET"],
-        "dest": "src/server.js"
-      },
-      {
-        "src": "/api/v1/products/update/:slug",
-        "methods": ["PUT"],
         "dest": "src/server.js"
       },
       {
